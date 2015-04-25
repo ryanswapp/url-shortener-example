@@ -1,0 +1,15 @@
+<template name="Home">
+  {{> sAlert}}
+  <div class="container">
+    <div class="shorten-url-box">
+      <h1>Url Shortener</h1>
+      <div class="input-field">
+        <label class="active" for="url-to-shorten">Url to shorten</label>
+        <input type="text" placeholder="http://example.com" name='url-to-shorten' class='url-to-shorten'>
+      </div>
+      <button class="waves-effect waves-light btn shorten blue lighten-1">Shorten</button>
+    </div>
+    <h4>{{shortUrl}}</h4>
+
+  </div>
+</template>
