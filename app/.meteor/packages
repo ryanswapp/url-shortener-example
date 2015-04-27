@@ -8,5 +8,5 @@ meteor-platform
 iron:router
 materialize:materialize
 juliancwirko:s-alert
-ryanswapp:url-shortener
 juliancwirko:s-alert-bouncyflip
+ryanswapp:url-shortener

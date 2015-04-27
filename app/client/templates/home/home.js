@@ -7,21 +7,16 @@ Template.Home.events({
 
     // Grab the url from the input it is stored in and put it into
     // an object to pass in to the url-shortener/shorten method
-    var urlObj = {
-      long_url: $('.url-to-shorten').val()
-    }
+    var url = $('.url-to-shorten').val();
 
-
-    Meteor.call('url-shortener/shorten', urlObj, function(err, res) {
+    UrlShortener.shorten(url, function(err, res) {
       if (err) {
         sAlert.error("That is a bad url");
         console.log(err);
-        throw new Meteor.Error('Bad Url', 'That is a bad url');
       } else {
-        Session.set('shortUrl', Meteor.absoluteUrl() + 's/' + res.path);
+        Session.set('shortUrl', res.path);
         $('.url-to-shorten').val('');
       }
-
     });
 
 
